@@ -14,7 +14,8 @@
     </bean>
 
     <bean id="musicPlayer"
-          class="ru.marunich.spring.MusicPlayer">
+          class="ru.marunich.spring.MusicPlayer"
+            scope="prototype">
         <property name="music" ref="musicBean"/>
 
 <!--        <property name="name" value="Some name"/>-->
