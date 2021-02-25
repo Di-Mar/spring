@@ -10,18 +10,21 @@
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <bean id="musicBean"
-          class="ru.marunich.spring.ClassicalMusic">
+          class="ru.marunich.spring.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          factory-method="getClassicalMusic">
     </bean>
 
-    <bean id="musicPlayer"
-          class="ru.marunich.spring.MusicPlayer"
-            scope="prototype">
-        <property name="music" ref="musicBean"/>
+<!--    <bean id="musicPlayer"-->
+<!--          class="ru.marunich.spring.MusicPlayer"-->
+<!--            scope="prototype">-->
+<!--        <property name="music" ref="musicBean"/>-->
 
-<!--        <property name="name" value="Some name"/>-->
-<!--        <property name="volume" value="50"/>-->
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
+<!--&lt;!&ndash;        <property name="name" value="Some name"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="volume" value="50"/>&ndash;&gt;-->
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--    </bean>-->
 
 </beans>
