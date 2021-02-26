@@ -1,12 +1,13 @@
 package ru.marunich.spring;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class TestSpring {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                "applicationContext.xml"
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
+                SpringConfig.class
         );
+
 
 //        Music music =context.getBean("rockMusic", Music.class);
 //        MusicPlayer musicPlayer = new MusicPlayer(music);
