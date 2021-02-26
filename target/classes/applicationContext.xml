@@ -7,24 +7,6 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:property-placeholder location="classpath:musicPlayer.properties"/>
-
-    <bean id="musicBean"
-          class="ru.marunich.spring.ClassicalMusic"
-          init-method="doMyInit"
-          destroy-method="doMyDestroy"
-          factory-method="getClassicalMusic">
-    </bean>
-
-<!--    <bean id="musicPlayer"-->
-<!--          class="ru.marunich.spring.MusicPlayer"-->
-<!--            scope="prototype">-->
-<!--        <property name="music" ref="musicBean"/>-->
-
-<!--&lt;!&ndash;        <property name="name" value="Some name"/>&ndash;&gt;-->
-<!--&lt;!&ndash;        <property name="volume" value="50"/>&ndash;&gt;-->
-<!--        <property name="name" value="${musicPlayer.name}"/>-->
-<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
-<!--    </bean>-->
+    <context:component-scan base-package="ru.marunich.spring"/>
 
 </beans>
